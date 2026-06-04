@@ -767,10 +767,10 @@ export default function App() {
                 <p className="text-neutral-400 font-medium text-sm mb-4">Founder & Developer</p>
                 <p className="text-neutral-500 text-sm leading-relaxed mb-5">Driving target goals, product operations, and strategic scaling of the Horizon ecosystem.</p>
                 <a 
-                  href="mailto:abhiramts2004@gmail.com" 
+                  href="mailto:tsabhiram2004@gmail.com" 
                   className="inline-flex items-center gap-2 text-xs font-bold text-neutral-300 hover:text-white transition-colors"
                 >
-                  <Mail size={14} /> abhiramts2004@gmail.com
+                  <Mail size={14} /> tsabhiram2004@gmail.com
                 </a>
               </div>
             </div>
@@ -793,11 +793,11 @@ export default function App() {
               </a>
 
               <a 
-                href="mailto:abhiramts2004@gmail.com" 
+                href="mailto:tsabhiram2004@gmail.com" 
                 className="group flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white hover:text-black transition-all duration-300 w-full sm:w-auto justify-center"
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="font-semibold text-sm">abhiramts2004@gmail.com</span>
+                <span className="font-semibold text-sm">tsabhiram2004@gmail.com</span>
               </a>
 
             </div>
