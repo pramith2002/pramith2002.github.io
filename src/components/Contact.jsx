@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowUpRight, Mail } from 'lucide-react';
 import { HorizonMark, Magnetic, Scribble, SplitWords, YouTubeIcon } from './ui';
-import { DEV_PROFILE, YT_CHANNEL, otherApps, sketchflow } from '../data/apps';
+import { DEV_PROFILE, YT_CHANNEL, arrowmio, otherApps, sketchflow } from '../data/apps';
 
 export default function Contact() {
   const ref = useRef(null);
@@ -73,13 +73,17 @@ export default function Contact() {
                   <a href={a.playStore} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">{a.name}</a>
                 </li>
               ))}
+              <li>
+                <a href="#games" className="hover:text-accent transition-colors">{arrowmio.name}</a>
+                <span className="ml-2 align-middle rounded-full bg-volt/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent">Soon</span>
+              </li>
             </ul>
           </div>
 
           <div className="md:col-span-3">
             <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-mute">Privacy</h3>
             <ul className="mt-4 space-y-2.5 font-semibold">
-              {[sketchflow, ...otherApps].map((a) => (
+              {[sketchflow, ...otherApps, arrowmio].map((a) => (
                 <li key={a.id}>
                   <a href={a.privacyUrl} className="hover:text-accent transition-colors">{a.shortName}</a>
                 </li>

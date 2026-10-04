@@ -10,6 +10,7 @@ import LaunchFilm from './components/LaunchFilm';
 import Gallery from './components/Gallery';
 import IOSTeaser from './components/IOSTeaser';
 import Apps from './components/Apps';
+import Games from './components/Games';
 import Studio from './components/Studio';
 import Contact from './components/Contact';
 
@@ -57,6 +58,7 @@ export default function App() {
         <Gallery />
         <IOSTeaser />
         <Apps />
+        <Games />
         <Studio />
       </main>
       <Contact />

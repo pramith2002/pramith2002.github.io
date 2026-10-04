@@ -126,3 +126,18 @@ From electronics warranties and insurance papers to medicines and groceries, eve
     ],
   },
 ];
+
+export const arrowmio = {
+  id: 'arrowmio',
+  name: 'Arrowmio: Tap Puzzle Game',
+  shortName: 'Arrowmio',
+  tagline: 'Tap. Clear. Repeat.',
+  description:
+    'A clean, satisfying tap puzzle. Every arrow flies off in the direction it points, but only if nothing is in its way. Read the board, find the right order, and clear every arrow.',
+  privacyUrl: './privacy-arrowmio.html',
+  points: [
+    { title: 'Tap to launch', desc: 'Each arrow shoots off the board in the direction it points.' },
+    { title: 'Mind the blockers', desc: 'An arrow with another arrow in its path will not budge.' },
+    { title: 'Clear the board', desc: 'Find the right order to send every arrow flying.' },
+  ],
+};

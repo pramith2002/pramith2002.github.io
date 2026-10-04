@@ -10,6 +10,7 @@ const LINKS = [
   { href: '#sketchflow', label: 'Sketchflow' },
   { href: '#film', label: 'Launch film' },
   { href: '#apps', label: 'Apps' },
+  { href: '#games', label: 'Games' },
   { href: '#studio', label: 'Studio' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -48,7 +49,7 @@ export default function Nav({ ready }) {
             Horizon<span className="text-mute font-semibold">Builds</span>
           </a>
 
-          <ul className="hidden md:flex items-center gap-1 text-sm font-semibold text-mute">
+          <ul className="hidden lg:flex items-center gap-1 text-sm font-semibold text-mute">
             {LINKS.map((l) => (
               <li key={l.href}>
                 <a href={l.href} className="relative px-4 py-2 rounded-full hover:text-fg hover:bg-fg/5 transition-colors">
@@ -70,7 +71,7 @@ export default function Nav({ ready }) {
             </a>
             <button
               onClick={() => setOpen((o) => !o)}
-              className="md:hidden grid place-items-center w-11 h-11 rounded-full bg-fg/10"
+              className="lg:hidden grid place-items-center w-11 h-11 rounded-full bg-fg/10"
               aria-label={open ? 'Close menu' : 'Open menu'}
               aria-expanded={open}
             >
@@ -86,7 +87,7 @@ export default function Nav({ ready }) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.3, ease: EASE }}
-              className="md:hidden mt-2 mx-auto max-w-6xl glass rounded-3xl p-3"
+              className="lg:hidden mt-2 mx-auto max-w-6xl glass rounded-3xl p-3"
             >
               {LINKS.map((l, i) => (
                 <motion.a
