@@ -20,7 +20,7 @@
             background: rgba(18, 18, 20, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 24px;
-            padding: 40px;
+            padding: clamp(22px, 5vw, 40px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
         h1 {
@@ -58,6 +58,7 @@
         a {
             color: #a855f7;
             text-decoration: none;
+            overflow-wrap: anywhere;
             transition: color 0.2s;
         }
         a:hover {
@@ -83,71 +84,79 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <div class="meta">Arrowmio: Tap Puzzle Game &middot; Last updated: October 24, 2026</div>
+        <div class="meta">Arrowmio: Tap Puzzle Game &middot; Android &amp; iOS &middot; Last updated: October 24, 2026</div>
 
-        <p>This Privacy Policy applies to the <strong>Arrowmio: Tap Puzzle Game</strong> mobile application (the "App") provided by Horizon Builds ("we," "our," or "us"). The App is free to play, supported by advertising and optional in-app purchases.</p>
+        <p>This Privacy Policy applies to <strong>Arrowmio: Tap Puzzle Game</strong> on Android and iOS (the "App"), provided by Horizon Builds ("we," "our," or "us"). The App is free to play, supported by advertising and optional in-app purchases. Platform services differ as described below.</p>
 
         <h2>1. Summary</h2>
         <ul>
-            <li><strong>No account is needed.</strong> You can play without signing up or logging in, and we don't run our own servers for the App.</li>
-            <li><strong>Your progress stays on your device.</strong> Levels, coins, boosters, settings, your multiplayer nickname and profile photo are saved only on your phone.</li>
-            <li><strong>The App uses Google services.</strong> Google AdMob shows ads, and Google Firebase helps us understand how the game is played and fix crashes. These services receive some information from your device, described below.</li>
-            <li><strong>Wi-Fi races are local.</strong> Your nickname and optional profile photo are shown only to the other players in the same room on your Wi-Fi network. They are never sent to us.</li>
+            <li><strong>No Horizon account is needed.</strong> Optional platform features use your Google Play Games or Apple Game Center account.</li>
+            <li><strong>Local saves and platform services:</strong> progress and preferences are saved on your device. Google Play Games can also save progress online on Android. Apple Game Center processes achievement progress on iOS.</li>
+            <li><strong>Advertising and diagnostics:</strong> Google AdMob, Google Analytics for Firebase and Firebase Crashlytics process device, interaction and technical information as described below, subject to applicable settings and consent.</li>
+            <li><strong>Platform purchases:</strong> Google Play handles Android payments and Apple handles iOS in-app payments. We do not receive your payment card details.</li>
+            <li><strong>Local Wi-Fi races:</strong> room participants receive your chosen nickname, optional profile photo and race status over the local network.</li>
         </ul>
 
         <h2>2. Information Stored on Your Device</h2>
-        <p>Your game progress, coins, boosters, purchases, settings, your multiplayer nickname and, if you add one, your profile photo are stored only on your device. The profile photo is a small copy (128 by 128 pixels) of a picture you choose with your phone's own photo picker; the App doesn't read any other pictures. All of this is removed when you uninstall the App or clear its data.</p>
+        <p>The App stores game progress, coins, boosters, unfinished puzzles, settings, purchase entitlements and your local multiplayer profile on your device. If you choose a profile photo using the system photo picker, the App stores a small copy for your profile; it does not need access to your entire photo library.</p>
+        <p>Deleting the App or clearing its storage removes its local data, subject to your device's backup and restore settings. This does not automatically delete platform purchase records, achievements, cloud saves or information already processed by service providers.</p>
 
         <h2>3. Advertising (Google AdMob)</h2>
-        <p>The App uses <strong>Google AdMob</strong>, a service provided by Google LLC, to show banner ads, ads between levels and optional reward videos. When an ad is requested or shown, Google may collect and process information from your device, including:</p>
+        <p>The App uses <strong>Google AdMob</strong> for banner ads, interstitial ads and optional rewarded videos on Android and iOS. Google's advertising SDK may process:</p>
         <ul>
-            <li>Device identifiers, such as the Android Advertising ID and app set ID</li>
-            <li>Your IP address, which may be used to estimate your general location</li>
-            <li>Device and app information, such as device model, operating system version and language</li>
-            <li>Ad interaction data, such as ads viewed or tapped, and diagnostic information</li>
+            <li>Device identifiers, including Android advertising identifiers, the iOS advertising identifier (IDFA) when authorized, and app- or developer-scoped identifiers</li>
+            <li>IP address and approximate location inferred from it</li>
+            <li>Device and app details, ad impressions, clicks and other product interactions</li>
+            <li>Crash reports, performance metrics and other technical diagnostics</li>
         </ul>
-        <p>Google uses this information to deliver and measure ads, limit how often you see the same ad, and prevent fraud and abuse. Depending on your settings and region, ads may be personalized or non-personalized. See <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">how Google uses information from apps that use its services</a> and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">how Google uses information for advertising</a>.</p>
+        <p>This information supports advertising delivery and measurement, analytics, frequency limits and fraud prevention. Ad personalization depends on your region, consent and device settings. Non-personalized ads may still involve data processing. Read <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">how Google uses information from partner apps</a> and Google's <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" target="_blank" rel="noopener noreferrer">iOS advertising SDK disclosure</a>.</p>
 
-        <h2>4. Usage Statistics and Crash Reports (Google Firebase)</h2>
-        <p>To understand how the game is played and to improve it, the App uses <strong>Google Analytics for Firebase</strong>. It records events such as the screens you view, levels you start, win or lose, boosters you use, ads you watch, purchases, Wi-Fi races, your answer to the rating question and when you leave the App. Firebase also records an app instance ID, your device model and system version, and a coarse location derived from a masked IP address. This information is not linked to your name or to an account.</p>
-        <p>To find and fix crashes, the App uses <strong>Firebase Crashlytics</strong>. If the App crashes, a report is sent with technical details: where in the code the crash happened, the screen and level you were on, recent game events, your device model and system version, and a crash-reporting installation ID.</p>
+        <h2>4. Usage Statistics and Crash Reports (Firebase)</h2>
+        <p><strong>Google Analytics for Firebase</strong> helps us understand game usage. Events may describe screens viewed, level outcomes, booster use, ad interactions, purchases and local multiplayer activity. Analytics may process an app instance identifier, device and app information and approximate location. These identifiers can distinguish an installation even when you have not created a Horizon account. We do not intentionally attach your local multiplayer nickname or profile photo to analytics events.</p>
+        <p><strong>Firebase Crashlytics</strong> helps diagnose failures through crash stack traces, device and operating system details, installation identifiers and diagnostic logs. Reports can include game context such as the current screen, level and recent events. Collection follows the App's applicable consent settings. See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase's privacy information</a>.</p>
 
-        <h2>5. Purchases (Google Play)</h2>
-        <p>Purchases are made through Google Play. Google handles the payment, and the App never receives your card or payment details. The App keeps a record of what you bought so it can give it to you and restore it on a new install. Google Analytics for Firebase also records purchases (the product and its price) for our statistics.</p>
+        <h2>5. iOS Achievements (Apple Game Center)</h2>
+        <p>On iOS, Arrowmio uses <strong>Apple Game Center</strong> for achievements. When you use this feature while signed in, achievement identifiers and completion progress are sent to Apple and associated with your Game Center profile. Game Center can make a player identifier, nickname and avatar available to the game for its platform features.</p>
+        <p>Apple processes Game Center activity under its own privacy policy. Visibility of your achievements and profile depends on your Game Center sharing settings. You can manage those settings or sign out in your device's Game Center settings. This achievement integration does not mean that all iOS puzzle progress is backed up by Game Center. Read <a href="https://www.apple.com/legal/privacy/data/en/game-center/" target="_blank" rel="noopener noreferrer">Game Center &amp; Privacy</a>.</p>
 
-        <h2>6. Consent (Google User Messaging Platform)</h2>
-        <p>In the European Economic Area, the United Kingdom and Switzerland, the App asks for your consent through Google's consent form before ads are personalized and before Firebase collects usage statistics. Your choices are stored on your device and passed to Google AdMob and Firebase. You can change them at any time in the App's Settings under Ad choices.</p>
+        <h2>6. Android Achievements and Cloud Saves (Google Play Games)</h2>
+        <p>On Android, Google Play Games supports sign-in, achievements, game statistics and cloud saves. When signed in, the App sends achievement and event progress and selected save data to Google. Cloud saves include the level reached, coin and booster balances, counted game statistics and certain progress flags, so progress can be restored across installations. They do not include your local multiplayer photo or nickname.</p>
+        <p>Google processes this information in connection with your Play Games profile. You can manage sign-in and game data through Google Play Games settings. Local deletion alone does not remove the cloud copy, which can restore progress when you sign in again. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</p>
 
-        <h2>7. Wi-Fi Races</h2>
-        <p>When you host or join a Wi-Fi race, the phones in the room exchange your nickname, your profile photo (if you added one) and your progress in the race, directly over your local Wi-Fi network. Nothing is sent to us, and nothing is kept after you leave the room.</p>
+        <h2>7. In-App Purchases (Apple App Store and Google Play)</h2>
+        <p><strong>On iOS, purchases use Apple's in-app purchase system (StoreKit).</strong> On Android, purchases use Google Play Billing. The relevant store handles payment and maintains its purchase records; the App does not receive your card number or your Apple or Google account password.</p>
+        <p>The App processes product identifiers, purchase or transaction identifiers, purchase status and entitlement information to deliver products, prevent duplicate grants and restore eligible purchases. These records may be stored on your device. Purchase-related analytics, such as the product, value and currency, may also be processed by Firebase when collection is enabled. Consumable products, such as spent coins or boosters, may not be restorable in the same way as non-consumable purchases.</p>
+        <p>Apple and Google retain payment and transaction information under their own policies and applicable legal requirements. For Apple's practices, see <a href="https://www.apple.com/legal/privacy/data/en/app-store/" target="_blank" rel="noopener noreferrer">App Store &amp; Privacy</a>. Use the relevant store's purchase and refund controls for billing requests.</p>
 
-        <h2>8. Permissions</h2>
-        <p>The App uses only these permissions: Internet and network state (to load ads and send statistics), Wi-Fi state and Wi-Fi multicast (to find and join Wi-Fi races), vibration (for feedback in the game), Google Play Billing (for purchases), and the Advertising ID (used by Google AdMob). Some Google services also add the Google Play install referrer and permissions to schedule their work in the background. The App does not access your camera, microphone, contacts, files or precise location.</p>
+        <h2>8. Consent and Advertising Choices</h2>
+        <p>The App uses <strong>Google's User Messaging Platform</strong> to present consent messages where required, including the EEA, the United Kingdom and Switzerland. Where available, open Settings &rsaquo; Ad choices to review or change your choices. Consent preferences are stored on your device and used to configure the Google services in the App.</p>
+        <p>On iOS, Apple's App Tracking Transparency authorization is separate from Google's consent form. Access to IDFA and tracking across other companies' apps or websites require your permission where Apple requires it. You can manage permission in Settings &rsaquo; Privacy &amp; Security &rsaquo; Tracking. Denying tracking permission does not itself disable all advertising, analytics or diagnostics.</p>
+        <p>On Android, advertising identifier and ad privacy controls are available in your device's Google or Privacy settings. You can also manage Google ad preferences at <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>. Available controls vary by operating system and region.</p>
+        <p>Purchasing Remove Ads disables banner and interstitial ads. Optional rewarded videos remain available when you choose to watch them.</p>
 
-        <h2>9. Your Choices</h2>
-        <ul>
-            <li><strong>Consent:</strong> in the EEA, the UK and Switzerland, change what you allow at any time in Settings &rsaquo; Ad choices. If you decline, Firebase doesn't collect usage statistics and ads aren't personalized.</li>
-            <li><strong>Ad personalization:</strong> on Android you can reset your Advertising ID or opt out of personalized ads in your device settings (Settings &rsaquo; Google &rsaquo; Ads, or Settings &rsaquo; Privacy &rsaquo; Ads, depending on your device). You can also manage Google's ad personalization at <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>.</li>
-            <li><strong>Remove Ads:</strong> buying Remove Ads stops banner ads and ads between levels. Reward videos are only shown when you choose to watch one.</li>
-            <li><strong>Your nickname and photo:</strong> change or remove them any time in Multiplayer &rsaquo; Your profile.</li>
-            <li><strong>Deleting your data:</strong> uninstalling the App or clearing its storage removes everything saved on your device.</li>
-        </ul>
+        <h2>9. Local Wi-Fi Races and Permissions</h2>
+        <p>When you host or join a race, devices exchange your chosen nickname, optional profile photo, room information and race progress directly over the local network. This room data is not uploaded to a Horizon multiplayer server. Other participants can see it, so avoid using sensitive information in your profile. Analytics may separately record race events as described above.</p>
+        <p>On iOS, local network permission allows the App to discover or connect to nearby race rooms. On Android, network, Wi-Fi and multicast capabilities support these connections. Network access also supports ads, diagnostics, platform achievements, cloud saves where supported and purchases. Vibration is used for haptic feedback where available, and the system photo picker lets you choose a profile image.</p>
+        <p>The App does not request access to your microphone, contacts, camera or precise GPS location for these features. Ad-related identifiers remain subject to the platform controls described above.</p>
 
-        <h2>10. Data Retention</h2>
-        <p>Google Analytics for Firebase keeps event data for up to 14 months, and Firebase Crashlytics keeps crash reports for 90 days. Google AdMob keeps data as described in Google's policies. We don't keep any other copy.</p>
+        <h2>10. How Information Is Used and Shared</h2>
+        <p>Information is used to operate the game, deliver purchases, provide achievements and supported cloud saves, show and measure ads, diagnose issues, improve gameplay and respond to support requests. Apple and Google receive data for their services, and local race participants receive the room information described above. We do not sell your local multiplayer profile or provide it to advertising services.</p>
+        <p>If you email us, we receive your email address, message and any attachments you choose to send, and use them to respond and resolve your request. Please do not send passwords or payment card details. Information may also be disclosed when legally required or necessary to protect users and the service.</p>
 
-        <h2>11. Children's Privacy</h2>
-        <p>The App is not directed at children under the age of 13, and we don't knowingly collect personal information from them. If you believe a child has used the App and want information removed, please contact us and we will take appropriate steps.</p>
+        <h2>11. Retention and Deletion</h2>
+        <p>Local game data remains until it is deleted, replaced or removed with the App, subject to device backups. Analytics and diagnostic retention depends on the service and our configured retention settings. Platform achievement, cloud save and transaction records are retained under Apple's or Google's policies and applicable legal requirements. Support messages are kept as needed to handle the request and meet legal obligations.</p>
+        <p>You can change or remove your local multiplayer profile in the App. Manage Game Center and Play Games data using the relevant platform controls. To request access, correction or deletion of personal information we hold, contact us below. Depending on your region, you may also have rights to restrict or object to processing, withdraw consent or complain to your data protection authority. We will explain any verification or retention limits that apply. We cannot directly erase every record controlled independently by Apple or Google; their privacy controls and request channels may also be needed.</p>
 
-        <h2>12. Security</h2>
-        <p>Information sent to Google AdMob, Firebase and Google Play travels over encrypted (TLS) connections. Wi-Fi race messages stay on your local network. Because your progress is stored on your device, we recommend keeping your device secure with a screen lock and up-to-date software.</p>
+        <h2>12. International Processing and Security</h2>
+        <p>Apple and Google may process information in countries other than where you live, subject to their privacy policies and applicable transfer safeguards. We use the platform providers' secure services for purchases and achievements. Local Wi-Fi racing is not end-to-end encrypted; use a trusted network. No storage or transmission method can guarantee complete security.</p>
 
-        <h2>13. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last updated" date.</p>
+        <h2>13. Children's Privacy</h2>
+        <p>The App is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through the App, contact us so we can investigate and take appropriate steps. Parents can also use Apple's or Google's parental controls to manage platform services and purchases.</p>
 
-        <h2>14. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:pramith303@gmail.com">pramith303@gmail.com</a> or <a href="mailto:tsabhiram2004@gmail.com">tsabhiram2004@gmail.com</a>.</p>
-        <p>Google's own privacy policy applies to the information Google processes: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</p>
+        <h2>14. Changes and Contact</h2>
+        <p>We may update this policy when features or data practices change. The revised policy will appear here with an updated date.</p>
+        <p>For privacy questions or data requests, contact Horizon Builds at <a href="mailto:pramith303@gmail.com">pramith303@gmail.com</a> or <a href="mailto:tsabhiram2004@gmail.com">tsabhiram2004@gmail.com</a>. You can also find our contact details on the <a href="./contact.html">Contact &amp; App Support page</a>.</p>
+        <p>Provider policies: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</p>
 
         <a href="./" class="back-link">&larr; Back to Horizon Builds</a>
     </div>
