@@ -12,7 +12,7 @@ const LINKS = [
   { href: '#apps', label: 'Apps' },
   { href: '#games', label: 'Games' },
   { href: '#studio', label: 'Studio' },
-  { href: '#contact', label: 'Contact' },
+  { href: './contact.html', label: 'Contact' },
 ];
 
 export default function Nav({ ready }) {

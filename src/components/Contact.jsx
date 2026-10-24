@@ -93,7 +93,7 @@ export default function Contact() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 pb-10 flex flex-col sm:flex-row justify-between gap-2 text-sm text-mute">
           <p>© {new Date().getFullYear()} Horizon Builds. All rights reserved.</p>
-          <p>Live on Android · Coming to iOS</p>
+          <div className="flex flex-wrap gap-5"><a href="./contact.html" className="hover:text-accent transition-colors">Contact us &amp; support</a><p>Live on Android · Coming to iOS</p></div>
         </div>
       </div>
     </footer>
