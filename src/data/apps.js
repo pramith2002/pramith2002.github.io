@@ -132,12 +132,16 @@ export const arrowmio = {
   name: 'Arrowmio: Tap Puzzle Game',
   shortName: 'Arrowmio',
   tagline: 'Tap. Clear. Repeat.',
+  logo: 'assets/arrowmio/icon.png',
+  screenshots: [1, 2, 3, 4, 5, 6, 7, 8].map((i) => `assets/arrowmio/s${i}.png`),
+  playStore: 'https://play.google.com/store/apps/details?id=com.horizon.arrowmio&hl=en_IN',
+  trailer: 'https://youtube.com/shorts/vGXsowecVNY',
   description:
-    'A clean, satisfying tap puzzle. Every arrow flies off in the direction it points, but only if nothing is in its way. Read the board, find the right order, and clear every arrow.',
+    'Find a clear path, tap an arrow, and watch it fly. Untangle thousands of puzzles at your own pace, or race 2–6 friends on the same Wi-Fi.',
   privacyUrl: './privacy-arrowmio.html',
   points: [
-    { title: 'Tap to launch', desc: 'Each arrow shoots off the board in the direction it points.' },
-    { title: 'Mind the blockers', desc: 'An arrow with another arrow in its path will not budge.' },
-    { title: 'Clear the board', desc: 'Find the right order to send every arrow flying.' },
+    { title: 'Find the way out', desc: 'Tap free arrows in the right order to clear the board.' },
+    { title: '25,000+ levels', desc: 'From easy warmups to super hard puzzles.' },
+    { title: 'Race your friends', desc: 'Play with 2–6 people on the same Wi-Fi.' },
   ],
 };

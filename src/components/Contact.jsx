@@ -74,8 +74,8 @@ export default function Contact() {
                 </li>
               ))}
               <li>
-                <a href="#games" className="hover:text-accent transition-colors">{arrowmio.name}</a>
-                <span className="ml-2 align-middle rounded-full bg-volt/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent">Soon</span>
+                <a href={arrowmio.playStore} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">{arrowmio.name}</a>
+                <span className="ml-2 align-middle rounded-full bg-volt/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent">New</span>
               </li>
             </ul>
           </div>

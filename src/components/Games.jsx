@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion, useAnimate } from 'framer-motion';
-import { RotateCcw, Shield, Sparkles } from 'lucide-react';
-import { GooglePlayIcon, Reveal, SectionLabel, SplitWords } from './ui';
+import { ArrowUpRight, ChevronLeft, ChevronRight, Play, RotateCcw, Shield, Sparkles } from 'lucide-react';
+import { AppleIcon, GooglePlayIcon, Reveal, SectionLabel, SplitWords } from './ui';
 import { EASE, trackSpotlight } from '../lib/motion';
 import { arrowmio } from '../data/apps';
 
@@ -224,20 +224,36 @@ function PuzzleDemo() {
 
 /* ---------- Section ---------- */
 
-function ArrowmioMark({ className = 'w-16 h-16' }) {
+function GameScreenshots() {
+  const track = useRef(null);
+  const scroll = (direction) => track.current?.scrollBy({ left: direction * 250, behavior: 'smooth' });
+
   return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
-      <defs>
-        <linearGradient id="amGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#c8ff3c" />
-          <stop offset="1" stopColor="#2de2ff" />
-        </linearGradient>
-      </defs>
-      <rect width="64" height="64" rx="18" fill="url(#amGrad)" />
-      <path d="M16 40 L30 26 M24 25 H31 V32" stroke="#0b0c0d" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      <path d="M34 46 H48 M42 40 L48 46 L42 52" stroke="#0b0c0d" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.55" />
-      <path d="M40 14 V26 M34 20 L40 14 L46 20" stroke="#0b0c0d" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.8" />
-    </svg>
+    <Reveal delay={0.1} className="mt-20 md:mt-28">
+      <div className="flex items-end justify-between gap-5 mb-7">
+        <div>
+          <SectionLabel>Inside the game</SectionLabel>
+          <h3 className="mt-3 font-display text-3xl md:text-4xl font-extrabold tracking-tight">A little look at Arrowmio.</h3>
+        </div>
+        <div className="hidden sm:flex gap-2">
+          <button type="button" onClick={() => scroll(-1)} aria-label="Previous screenshots" className="grid place-items-center w-11 h-11 rounded-full border border-line hover:border-accent transition-colors"><ChevronLeft size={20} /></button>
+          <button type="button" onClick={() => scroll(1)} aria-label="Next screenshots" className="grid place-items-center w-11 h-11 rounded-full border border-line hover:border-accent transition-colors"><ChevronRight size={20} /></button>
+        </div>
+      </div>
+      <div ref={track} className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-5 no-scrollbar" aria-label="Arrowmio Google Play screenshots">
+        {arrowmio.screenshots.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Arrowmio store screenshot ${i + 1}`}
+            loading="lazy"
+            width="334"
+            height="592"
+            className="w-[190px] sm:w-[215px] md:w-[230px] shrink-0 snap-start rounded-[24px] border border-line shadow-[0_20px_45px_-20px_rgba(0,0,0,0.6)]"
+          />
+        ))}
+      </div>
+    </Reveal>
   );
 }
 
@@ -268,13 +284,13 @@ export default function Games() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
         <div className="flex flex-wrap items-center gap-3">
-          <SectionLabel>Upcoming game</SectionLabel>
+          <SectionLabel>Now playing</SectionLabel>
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-volt/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-accent">
             <span className="relative flex w-2 h-2">
               <span className="absolute inset-0 rounded-full bg-volt animate-ping" />
               <span className="relative w-2 h-2 rounded-full bg-volt" />
             </span>
-            Coming soon
+            Out now on Android
           </span>
         </div>
 
@@ -285,9 +301,9 @@ export default function Games() {
               whileInView={{ scale: 1, rotate: 0 }}
               viewport={{ once: true }}
               transition={{ type: 'spring', stiffness: 170, damping: 13 }}
-              className="w-fit rounded-[20px] shadow-[0_15px_40px_-12px_rgba(200,255,60,0.55)]"
+              className="w-fit rounded-[20px] shadow-[0_15px_40px_-12px_rgba(45,226,255,0.35)]"
             >
-              <ArrowmioMark className="w-16 h-16 md:w-20 md:h-20" />
+              <img src={arrowmio.logo} alt="Arrowmio app icon" width="80" height="80" className="w-16 h-16 md:w-20 md:h-20 rounded-[20px]" />
             </motion.div>
 
             <h2 className="mt-8 font-display font-extrabold tracking-[-0.035em] leading-[0.92] text-[clamp(3rem,7.5vw,6.5rem)]">
@@ -314,10 +330,17 @@ export default function Games() {
             </div>
 
             <Reveal delay={0.3} className="mt-10 flex flex-wrap items-center gap-4">
-              <span className="inline-flex items-center gap-3 rounded-full border border-dashed border-fg/25 pl-4 pr-6 py-3.5 font-bold text-mute cursor-default">
-                <GooglePlayIcon className="w-5 h-5 opacity-70" />
-                Coming soon to Google Play
+              <a href={arrowmio.playStore} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-volt to-cyan px-6 py-3.5 font-bold text-on-accent shadow-[0_15px_40px_-12px_rgba(200,255,60,0.6)] hover:scale-[1.03] active:scale-[0.98] transition-transform">
+                <GooglePlayIcon className="w-5 h-5" /> Get it on Google Play <ArrowUpRight size={17} />
+              </a>
+              <span className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-3.5 text-sm font-semibold text-mute">
+                <AppleIcon className="w-4 h-4" /> App Store coming soon
               </span>
+            </Reveal>
+            <Reveal delay={0.35} className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a href={arrowmio.trailer} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-fg hover:text-accent transition-colors">
+                <Play size={16} /> Watch the trailer <ArrowUpRight size={15} />
+              </a>
               <a
                 href={arrowmio.privacyUrl}
                 className="inline-flex items-center gap-2 text-sm font-semibold text-mute hover:text-accent transition-colors"
@@ -332,6 +355,8 @@ export default function Games() {
             <PuzzleDemo />
           </Reveal>
         </div>
+
+        <GameScreenshots />
       </div>
     </section>
   );
