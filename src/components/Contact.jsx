@@ -49,7 +49,7 @@ export default function Contact() {
       <div className="relative mt-28 md:mt-40 border-t border-fg/10 bg-ink/60 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-14 grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
-            <a href="#top" className="inline-flex items-center gap-2 font-display text-2xl font-extrabold tracking-tight">
+            <a href="./#top" className="inline-flex items-center gap-2 font-display text-2xl font-extrabold tracking-tight">
               <HorizonMark className="w-8 h-8 text-fg" /> Horizon<span className="text-mute font-semibold">Builds</span>
             </a>
             <p className="mt-4 text-mute max-w-sm">

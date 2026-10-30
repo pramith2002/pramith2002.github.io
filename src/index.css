@@ -327,7 +327,9 @@ body {
   .project-copy h3 { font-size: 22px; }
   .project-meta { gap: 5px; font-size: 9px; }
   .project-copy p { font-size: 12px; }
-  .project-actions { grid-column: 1 / -1; gap: 10px; }
+  .project-actions { grid-column: 1 / -1; gap: 10px; flex-wrap: wrap; }
+  .project-buttons { flex-shrink: 0; max-width: 100%; }
+  .project-actions .privacy-link { white-space: nowrap; }
   .project-buttons .button { padding-inline: 14px; font-size: 11px; }
   .privacy-link { font-size: 10px; }
   .home-contact { flex-direction: column; align-items: flex-start; margin-block: 30px; gap: 17px; }

@@ -124,6 +124,7 @@ export default function Preloader({ onReveal, onDone }) {
 
   return (
     <motion.div
+      data-horizon-splash="true"
       className="fixed inset-0 z-[70] overflow-hidden pointer-events-none"
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}

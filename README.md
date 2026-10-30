@@ -1,6 +1,6 @@
 # Horizon Builds
 
-A React + Vite website for Horizon Builds, with a compact company homepage and dedicated app and game pages. The existing dark/light theme, brand colors, and typography are shared across the site.
+A React + Vite website for Horizon Builds. The homepage retains its animated splash, hero, marquee, trailers, iOS teaser, studio/team section, and full contact footer. Only the app and game listings are compact; their detailed features, galleries, and demos live on dedicated Explore pages. The existing dark/light theme, brand colors, and typography are shared across the site.
 
 ## Local development
 
