@@ -5,4 +5,15 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: "./",
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        home: 'index.html',
+        sketchflow: 'sketchflow.html',
+        arrowmio: 'arrowmio.html',
+        flipbook: 'flipbook.html',
+        expiryguard: 'expiryguard.html',
+      },
+    },
+  },
 })

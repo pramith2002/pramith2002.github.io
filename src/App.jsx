@@ -1,67 +1,22 @@
-import { useCallback, useEffect, useState } from 'react';
-import { AnimatePresence, MotionConfig, useReducedMotion } from 'framer-motion';
-import Lenis from 'lenis';
-import Preloader from './components/Preloader';
+import { MotionConfig } from 'framer-motion';
 import Nav from './components/Nav';
-import Hero from './components/Hero';
-import Marquee from './components/Marquee';
-import Sketchflow from './components/Sketchflow';
-import LaunchFilm from './components/LaunchFilm';
-import Gallery from './components/Gallery';
-import IOSTeaser from './components/IOSTeaser';
-import Apps from './components/Apps';
-import Games from './components/Games';
-import Studio from './components/Studio';
-import Contact from './components/Contact';
-
-function useSmoothScroll(enabled) {
-  useEffect(() => {
-    if (!enabled) return;
-    const lenis = new Lenis({ duration: 1.15, easing: (t) => 1 - Math.pow(1 - t, 4), anchors: { offset: -20 } });
-    window.__lenis = lenis;
-    let raf = requestAnimationFrame(function loop(time) {
-      lenis.raf(time);
-      raf = requestAnimationFrame(loop);
-    });
-    return () => {
-      cancelAnimationFrame(raf);
-      lenis.destroy();
-      delete window.__lenis;
-    };
-  }, [enabled]);
-}
+import Home from './components/Home';
+import ProductPage from './components/ProductPage';
+import SiteFooter from './components/SiteFooter';
+import { products } from './data/products';
 
 export default function App() {
-  const reduce = useReducedMotion();
-  const [loading, setLoading] = useState(!reduce);
-  const [ready, setReady] = useState(reduce);
-  const reveal = useCallback(() => setReady(true), []);
-  const done = useCallback(() => setLoading(false), []);
-
-  useSmoothScroll(!reduce && !loading);
-
-  useEffect(() => {
-    document.body.style.overflow = loading ? 'hidden' : '';
-    if (loading) window.scrollTo(0, 0);
-  }, [loading]);
-
+  const filename = window.location.pathname.split('/').pop();
+  const product = products.find((item) => filename === `${item.id}.html`);
   return (
     <MotionConfig reducedMotion="user">
+      <a href="#main" className="skip-link">Skip to content</a>
       <div className="grain" aria-hidden="true" />
-      <AnimatePresence>{loading && <Preloader onReveal={reveal} onDone={done} />}</AnimatePresence>
-      <Nav ready={ready} />
-      <main>
-        <Hero ready={ready} />
-        <Marquee />
-        <Sketchflow />
-        <LaunchFilm />
-        <Gallery />
-        <IOSTeaser />
-        <Apps />
-        <Games />
-        <Studio />
+      <Nav product={product} />
+      <main id="main" tabIndex={-1}>
+        {product ? <ProductPage product={product} /> : <Home />}
       </main>
-      <Contact />
+      <SiteFooter />
     </MotionConfig>
   );
 }

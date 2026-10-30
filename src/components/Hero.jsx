@@ -72,7 +72,7 @@ export default function Hero({ ready }) {
             <Stars rating={4.6} className="w-3.5 h-3.5" />
             <span>4.6 rating</span>
             <span className="w-1 h-1 rounded-full bg-fg/30" />
-            <span>20K+ downloads</span>
+            <span>30K+ downloads</span>
             <span className="hidden sm:inline w-1 h-1 rounded-full bg-fg/30" />
             <span className="hidden sm:inline text-mute">Sketchflow on Google Play</span>
           </motion.a>
@@ -102,7 +102,7 @@ export default function Hero({ ready }) {
             className="mt-8 max-w-xl text-lg md:text-xl text-mute leading-relaxed"
           >
             Horizon Builds is a two-person indie studio. Our flagship,{' '}
-            <span className="text-fg font-semibold">Draw & Paint: Sketchflow</span>, has helped 20,000+ people
+            <span className="text-fg font-semibold">Draw & Paint: Sketchflow</span>, has helped 30,000+ people
             trace, sketch and paint with AR, and it's coming to iPhone next.
           </motion.p>
 
@@ -178,7 +178,7 @@ export default function Hero({ ready }) {
                   <Download size={18} />
                 </span>
                 <div>
-                  <p className="font-display text-2xl font-extrabold leading-none">20K+</p>
+                  <p className="font-display text-2xl font-extrabold leading-none">30K+</p>
                   <p className="text-xs text-mute mt-1">downloads</p>
                 </div>
               </motion.div>

@@ -16,7 +16,7 @@ export const sketchflow = {
     poster: 'assets/sketchflow/video-poster.webp',
   },
   stats: [
-    { value: 20, suffix: 'K+', label: 'Downloads on Google Play' },
+    { value: 30, suffix: 'K+', label: 'Downloads on Google Play' },
     { value: 4.6, decimals: 1, suffix: '★', label: 'Average store rating' },
     { value: 100, suffix: '+', label: 'Reviews from real artists' },
     { value: 1000, suffix: '+', label: 'Traceable templates' },
