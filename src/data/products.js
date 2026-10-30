@@ -1,4 +1,4 @@
-import { arrowmio, otherApps, sketchflow } from './apps';
+import { arrowmio, otherApps, sketchflow, zeropoint } from './apps';
 
 // Add appStore when a product's App Store listing is available.
 export const products = [
@@ -23,6 +23,15 @@ export const products = [
     features: arrowmio.points.map((item, i) => ({ ...item, icon: ['Focus', 'LayoutGrid', 'Zap'][i] })),
     appStore: null,
   },
+  {
+    ...zeropoint,
+    category: 'App',
+    genre: 'Personal finance',
+    label: 'Coming soon',
+    summary: 'A private, offline budget that gives you one number: what you can safely spend today. No bank login, no account.',
+    appStore: null,
+    availabilityNote: 'Coming soon to Android. Join the wishlist and we will email you when it launches.',
+  },
   ...otherApps.map((app) => ({
     ...app,
     category: 'App',
@@ -34,3 +43,4 @@ export const products = [
 ];
 
 export const productUrl = (product) => `./${product.id}.html`;
+export const wishlistUrl = (product) => `./wishlist.html?app=${encodeURIComponent(product.id)}`;

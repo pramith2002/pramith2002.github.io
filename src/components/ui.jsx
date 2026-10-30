@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, motion, useInView, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
 import {
-  Bell, Brush, Camera, Download, Eye, FileText, Film, Focus, Grid3x3, Layers, LayoutGrid,
-  Lightbulb, Lock, ScanBarcode, Smartphone, Sparkles, WandSparkles, Zap,
+  Bell, Brush, CalendarRange, Camera, Download, Eye, FileText, Film, Focus, Grid3x3, Layers, LayoutGrid,
+  Lightbulb, Lock, ScanBarcode, ShieldCheck, Smartphone, Sparkles, Target, WandSparkles, Zap,
 } from 'lucide-react';
 
 import { EASE } from '../lib/motion';
 
 const ICONS = {
-  Bell, Brush, Camera, Download, Eye, FileText, Film, Focus, Grid3x3, Layers, LayoutGrid,
-  Lightbulb, Lock, ScanBarcode, Smartphone, Sparkles, WandSparkles, Zap,
+  Bell, Brush, CalendarRange, Camera, Download, Eye, FileText, Film, Focus, Grid3x3, Layers, LayoutGrid,
+  Lightbulb, Lock, ScanBarcode, ShieldCheck, Smartphone, Sparkles, Target, WandSparkles, Zap,
 };
 
 export function Icon({ name, ...props }) {

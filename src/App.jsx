@@ -12,6 +12,7 @@ import IOSTeaser from './components/IOSTeaser';
 import Studio from './components/Studio';
 import Contact from './components/Contact';
 import ProductPage from './components/ProductPage';
+import WishlistPage from './components/WishlistPage';
 import { products } from './data/products';
 
 function useSmoothScroll(enabled) {
@@ -34,9 +35,11 @@ function useSmoothScroll(enabled) {
 export default function App() {
   const filename = window.location.pathname.split('/').pop();
   const product = products.find((item) => filename === `${item.id}.html`);
+  const isWishlist = filename === 'wishlist.html';
+  const isSubpage = Boolean(product) || isWishlist;
   const reduce = useReducedMotion();
-  const [loading, setLoading] = useState(!reduce && !product);
-  const [ready, setReady] = useState(Boolean(reduce || product));
+  const [loading, setLoading] = useState(!reduce && !isSubpage);
+  const [ready, setReady] = useState(Boolean(reduce || isSubpage));
   const reveal = useCallback(() => setReady(true), []);
   const done = useCallback(() => setLoading(false), []);
 
@@ -68,7 +71,7 @@ export default function App() {
       <AnimatePresence>{loading && <Preloader onReveal={reveal} onDone={done} />}</AnimatePresence>
       <Nav ready={ready} product={product} />
       <main id="main" tabIndex={-1}>
-        {product ? <ProductPage product={product} /> : (
+        {isWishlist ? <WishlistPage /> : product ? <ProductPage product={product} /> : (
           <>
             <Hero ready={ready} />
             <Marquee />

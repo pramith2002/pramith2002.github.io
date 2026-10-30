@@ -145,3 +145,26 @@ export const arrowmio = {
     { title: 'Race your friends', desc: 'Play with 2–6 people on the same Wi-Fi.' },
   ],
 };
+
+export const zeropoint = {
+  id: 'zeropoint',
+  name: 'ZeroPoint: Daily Budget',
+  shortName: 'ZeroPoint',
+  tagline: 'Know what you can safely spend today.',
+  logo: 'assets/zeropoint/logo.webp',
+  screenshots: Array.from({ length: 13 }, (_, i) => `assets/zeropoint/s${i + 1}.webp`),
+  playStore: null,
+  privacyUrl: null,
+  comingSoon: true,
+  description: `ZeroPoint answers one question: what can I safely spend today? It sets aside your bills, savings and money you are holding for later, then shows a single daily number you can trust.
+
+Log spending in seconds from your home-screen widget. ZeroPoint is private and works offline. There is no bank login, no account and no ads, and your data stays on your phone.`,
+  features: [
+    { title: 'One daily number', desc: 'A safe-to-spend figure that already accounts for bills, savings and held money. Tap it to see how it was worked out.', icon: 'Target' },
+    { title: 'Home-screen widget', desc: 'See today’s number and log an expense or income without opening the app. Repeat chips fill in your usual purchases.', icon: 'Smartphone' },
+    { title: 'Time Blocks', desc: 'Set aside a lump sum for a trip, a renovation or a new laptop, and track it in its own currency.', icon: 'CalendarRange' },
+    { title: 'Bills and subscriptions', desc: 'Fixed bills stay reserved until they are paid. See what each subscription costs you over time.', icon: 'Bell' },
+    { title: 'No bank login', desc: 'Nothing to link and nothing to break. Import a bank statement instead, with duplicate checks.', icon: 'Lock' },
+    { title: 'Encrypted backup', desc: 'Back up everything to a password-protected file you control. Optional app lock and hidden amounts.', icon: 'ShieldCheck' },
+  ],
+};

@@ -13,6 +13,8 @@ export default defineConfig({
         arrowmio: 'arrowmio.html',
         flipbook: 'flipbook.html',
         expiryguard: 'expiryguard.html',
+        zeropoint: 'zeropoint.html',
+        wishlist: 'wishlist.html',
       },
     },
   },

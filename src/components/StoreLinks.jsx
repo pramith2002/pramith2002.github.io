@@ -1,9 +1,13 @@
 import { AppleIcon, GooglePlayIcon } from './ui';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Heart } from 'lucide-react';
+import { wishlistUrl } from '../data/products';
 
 export default function StoreLinks({ product, compact = false }) {
   return (
     <div className={`store-links ${compact ? 'store-links-compact' : ''}`}>
+      {product.comingSoon && <a className="button button-primary" href={wishlistUrl(product)} aria-label={`Join the ${product.shortName} wishlist`}>
+        <Heart size={15} />{compact ? 'Wishlist' : 'Join the wishlist'}
+      </a>}
       {product.playStore && <a className="button button-primary" href={product.playStore} target="_blank" rel="noopener noreferrer" aria-label={`Download ${product.shortName} on Google Play (opens in a new tab)`}>
         <GooglePlayIcon />{compact ? 'Download' : 'Get it on Google Play'}<ArrowUpRight size={15} />
       </a>}

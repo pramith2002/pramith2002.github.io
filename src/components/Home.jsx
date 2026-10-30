@@ -56,7 +56,9 @@ export default function Home() {
                   <StoreLinks product={product} compact />
                   <a href={productUrl(product)} className="button button-secondary" aria-label={`Explore ${product.shortName}`}>Explore <ArrowUpRight size={16} /></a>
                 </div>
-                <a className="privacy-link" href={product.privacyUrl} aria-label={`${product.shortName} privacy policy`}>Privacy policy</a>
+                {product.privacyUrl
+                  ? <a className="privacy-link" href={product.privacyUrl} aria-label={`${product.shortName} privacy policy`}>Privacy policy</a>
+                  : product.comingSoon && <span className="privacy-link">Coming soon to Android</span>}
               </div>
             </motion.article>
           ))}

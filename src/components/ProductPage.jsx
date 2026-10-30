@@ -77,7 +77,7 @@ export default function ProductPage({ product }) {
             {product.availabilityNote && <p className="availability-note">{product.availabilityNote}</p>}
             <div className="product-utility-links">
               {trailerAnchor && <a href={trailerAnchor}><Play size={15} /> Watch trailer</a>}
-              <a href={product.privacyUrl}><Shield size={15} /> Privacy policy</a>
+              {product.privacyUrl && <a href={product.privacyUrl}><Shield size={15} /> Privacy policy</a>}
               <a href="./contact.html">App support <ArrowUpRight size={15} /></a>
             </div>
           </div>
